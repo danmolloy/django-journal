@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}My Journal{% endblock %}
+
+{% block content %}
+{% if all_entries %}
+    <div class="entries-list">
+        <div class="main-title-div">
+            <h2>Your Entries</h2>
+            <a class="button-primary" href="create/">New Entry</a>
+        </div>
+    {% for entry in all_entries %}
+        <a class="entry-tile" href="{% url 'detail' entry.id %}">
+            <p class="entry-date">{{ entry.pub_date }}</p>
+            <h3>{{ entry.title }}</h3>
+            <p>{{ entry.body|slice:":10" }} ...</p>
+        </a>
+    {% endfor %}
+    </div>
+{% else %}
+    <p>No entries available.</p>
+{% endif %}
+{% endblock %}
+

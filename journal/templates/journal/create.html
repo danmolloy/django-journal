@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}My Journal{% endblock %}
+
+{% block content %}
+<form method="post">
+  {% csrf_token %}
+  <div class="main-title-div">
+    <h1>Create</h1>
+  </div> 
+  <div class="edit-body">
+  <div class="input-div">
+    <label for="title">Title</label>
+    <input class="input-primary" id="title" name="title" />
+  </div>
+  <div class="input-div">
+    <label for="body">Body</label>
+    <textarea class="input-body" id="body" name="body">{{ entry.body }}</textarea>
+    </div>
+  <input class="button-primary" value="Save" type="submit"/>
+</div>
+</form>
+{% endblock %}

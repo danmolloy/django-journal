@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}My Journal{% endblock %}
+
+{% block content %}
+<div  class="main-title-div">
+
+  <h1>{{ entry.title }}</h1>
+  <div class="detail-btns-div">
+    <a class="button-primary" href="/journal/edit/{{ entry.id }}">Edit</a>
+    <form  action="/journal/{{ entry.id }}/delete" method="post">
+    {% csrf_token %}
+    <input class="button-primary" type="submit" value="Delete">
+  </form>
+  </div>
+</div>
+<div class="detail-body">
+<p class="entry-date">{{ entry.pub_date }}</p>
+<p>{{ entry.body }}</p>
+</div>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+</head>
+<body class="body">
+    <!-- Add your common header, navigation, etc. here -->
+    <div class="header">
+      <a href="/journal/">
+        <h2 class="header-h2">My Journal</h2>
+      </a>
+      <div>
+        {% if user.is_authenticated%}
+<div class="account-info">
+    <p>{{user.username}}</p>
+    <a class="button-primary log-out-btn" href="{% url 'logout'%}">Log Out</a>
+</div>
+{% endif %}
+      </div>
+    </div>
+    <div class="main">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div class="footer"></div>
+    <!-- Add your common footer here -->
+</body>
+</html>

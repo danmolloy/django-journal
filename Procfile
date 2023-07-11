@@ -1,0 +1,1 @@
+web: myjournal.wsgi -log-file - 
