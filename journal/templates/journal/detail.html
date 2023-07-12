@@ -7,8 +7,8 @@
 
   <h1>{{ entry.title }}</h1>
   <div class="detail-btns-div">
-    <a class="button-primary" href="/journal/edit/{{ entry.id }}">Edit</a>
-    <form  action="/journal/{{ entry.id }}/delete" method="post">
+    <a class="button-primary" href="/edit/{{ entry.id }}">Edit</a>
+    <form  action="/{{ entry.id }}/delete" method="post">
     {% csrf_token %}
     <input class="button-primary" type="submit" value="Delete">
   </form>
