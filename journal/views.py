@@ -1,13 +1,15 @@
 from typing import Any
 from django.db.models.query import QuerySet
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import generic
 from django.contrib.auth import authenticate, login
 from .forms import EntryForm
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
+from django.contrib.auth.forms import UserCreationForm
+
 
 
 from .models import Entry
@@ -61,3 +63,13 @@ def delete(request, entry_id):
         doomed_post = Entry.objects.get(id=entry_id)
         doomed_post.delete()
     return HttpResponseRedirect("/journal")
+
+def signup(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')  # Redirect to login page after successful signup
+    else:
+        form = UserCreationForm()
+    return render(request, 'registration/signup.html', {'form': form})
