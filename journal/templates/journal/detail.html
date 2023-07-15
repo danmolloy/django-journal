@@ -10,7 +10,7 @@
     <a class="button-primary" href="/edit/{{ entry.id }}">Edit</a>
     <form  action="/{{ entry.id }}/delete" method="post">
     {% csrf_token %}
-    <input class="button-primary" type="submit" value="Delete">
+    <input class="button-secondary delete-btn" type="submit" value="Delete">
   </form>
   </div>
 </div>

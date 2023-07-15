@@ -28,10 +28,12 @@
         <td>{{ form.password }}</td>
       </tr>
     </table>
-    <input class="button-primary" type="submit" value="login">
+    <div>
+      <input class="button-primary" type="submit" value="login">
+      <a class="button-secondary" href="{% url 'signup' %}">Sign Up</a>
+    </div>
     <input  type="hidden" name="next" value="{{ next }}">
   </form>
 
   {# Assumes you setup the password_reset view in your URLconf #}
-  <a href="{% url 'signup' %}">Sign Up</a>
 {% endblock %}

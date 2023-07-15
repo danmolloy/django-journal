@@ -47,7 +47,7 @@ def edit(request, entry_id):
         edited_post.title = request.POST.get("title")
         edited_post.body = request.POST.get("body")
         edited_post.save()
-        return HttpResponseRedirect("/journal/" + str(edited_post.id))
+        return HttpResponseRedirect("/" + str(edited_post.id))
         """ edited_detail = request.POST
         updated_post = EntryForm(edited_detail)
         updated_post.save()

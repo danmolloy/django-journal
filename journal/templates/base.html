@@ -15,7 +15,7 @@
         {% if user.is_authenticated%}
 <div class="account-info">
     <p>{{user.username}}</p>
-    <a class="button-primary log-out-btn" href="{% url 'logout'%}">Log Out</a>
+    <a class="button-secondary log-out-btn" href="{% url 'logout'%}">Log Out</a>
 </div>
 {% endif %}
       </div>

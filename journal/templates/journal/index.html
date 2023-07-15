@@ -14,7 +14,7 @@
         <a class="entry-tile" href="{% url 'detail' entry.id %}">
             <p class="entry-date">{{ entry.pub_date }}</p>
             <h3>{{ entry.title }}</h3>
-            <p>{{ entry.body|slice:":10" }} ...</p>
+            <p>{{ entry.body|slice:":50" }} ...</p>
         </a>
     {% endfor %}
     </div>
