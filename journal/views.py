@@ -34,7 +34,7 @@ def create(request):
             entry.author = request.user  # Assign the user object directly
             entry.save()
             print(entry.author)
-            return HttpResponseRedirect("/journal")
+            return HttpResponseRedirect("/")
 
     else:
         form = EntryForm()
@@ -62,7 +62,7 @@ def delete(request, entry_id):
     if request.method == "POST":
         doomed_post = Entry.objects.get(id=entry_id)
         doomed_post.delete()
-    return HttpResponseRedirect("/journal")
+    return HttpResponseRedirect("/")
 
 def signup(request):
     if request.method == 'POST':
