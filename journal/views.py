@@ -11,7 +11,6 @@ from django.utils.decorators import method_decorator
 from django.contrib.auth.forms import UserCreationForm
 
 
-
 from .models import Entry
 
 @method_decorator(login_required(login_url='accounts/login/'), name='dispatch')
@@ -69,7 +68,7 @@ def signup(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('login')  # Redirect to login page after successful signup
+            return redirect('/')  # Redirect to login page after successful signup
     else:
         form = UserCreationForm()
     return render(request, 'registration/signup.html', {'form': form})
