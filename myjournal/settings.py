@@ -25,8 +25,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-
-ALLOWED_HOSTS = ["*", "127.0.0.1", "https://*.railwayapp.com"]
+CSRF_TRUSTED_ORIGINS = ['https://*.railwayapp.com']
+ALLOWED_HOSTS = ["*", "127.0.0.1", "*.railwayapp.com"]
 
 
 # Application definition
@@ -86,7 +86,7 @@ DATABASES = {
         'HOST': os.environ.get('DATABASE_HOST'),
         'PORT': os.environ.get('DATABASE_PORT'),
     }
-} 
+}
 """ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
