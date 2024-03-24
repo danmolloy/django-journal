@@ -1,4 +1,14 @@
 /* base.html */
+/* base.html */
+
+.inconsolata-text {
+  font-family: "Inconsolata", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
 
 .body {
   display: flex;
@@ -7,6 +17,11 @@
   min-height: 100vh;
   height: auto;
   width: 100vw;
+  font-family: "Inconsolata", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
 }
 
 .header {
@@ -25,7 +40,11 @@
 }
 
 .header-h2 {
-  color: rgb(34 197 94);
+  color: rgb(29 78 216);
+  font-family: "Changa", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .main {
@@ -107,11 +126,11 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: rgb(34 197 94);
+  color: rgb(29 78 216);
   height: 1.5rem;
   background-color: white;
-  min-width: 3rem;
-  max-width: 6rem;
+  width: 6rem;
+  
 }
 
 .button-secondary {
@@ -119,40 +138,38 @@ a {
   border-radius: 0.25rem;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   margin: 0.25rem;
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
-  
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: rgb(234 179 8);
+  color: rgb(249 115 22);
   height: 1.5rem;
   background-color: white;
-  min-width: 3rem;
-  max-width: 6rem;
+  width: 6rem;
 }
 
 .button-secondary:hover {
-  background-color: rgb(254 249 195);
+  background-color: rgb(255 237 213);
   cursor: pointer;
 }
 
-.button-secondary:active {
-  background-color: rgb(254 240 138);
-}
+
 
 .button-primary:hover {
-  background-color: rgb(240 253 244);
+  background-color: rgb(219 234 254);
   cursor: pointer;
 }
 
-.button-primary:active {
-  background-color: rgb(220 252 231);
+.buttons-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
 }
 
+
 .delete-btn {
-  width: 4rem;
+  width: 6rem;
   height: 1.5rem;
   color: rgb(239 68 68);
 }
@@ -207,6 +224,11 @@ a {
   display: flex;
   flex-direction: column;
   width: 50vw;
+}
+
+.login {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .input-primary {
