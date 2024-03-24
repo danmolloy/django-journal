@@ -23,10 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-CSRF_TRUSTED_ORIGINS = ['https://*.railwayapp.com']
-ALLOWED_HOSTS = ["*", "127.0.0.1", "https://*.railwayapp.com"]
+CSRF_TRUSTED_ORIGINS = ['https://django-journal-production.up.railway.app/']
+ALLOWED_HOSTS = ["*", "127.0.0.1", "*.railway.app"]
 
 
 # Application definition
