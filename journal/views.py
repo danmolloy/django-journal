@@ -3,9 +3,7 @@ from django.db.models.query import QuerySet
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.views import generic
-from django.contrib.auth import authenticate, login
 from .forms import EntryForm
-from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.contrib.auth.forms import UserCreationForm

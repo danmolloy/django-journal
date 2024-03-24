@@ -22,11 +22,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-CSRF_COOKIE_SECURE = True
-ALLOWED_HOSTS = ["*", "127.0.0.1", ".railwayapp.com"]
+
+
+ALLOWED_HOSTS = ["*", "127.0.0.1", "https://*.railwayapp.com"]
 
 
 # Application definition
@@ -86,7 +86,7 @@ DATABASES = {
         'HOST': os.environ.get('DATABASE_HOST'),
         'PORT': os.environ.get('DATABASE_PORT'),
     }
-}
+} 
 """ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
