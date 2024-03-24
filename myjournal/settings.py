@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = False
 
 CSRF_TRUSTED_ORIGINS = ['https://*.railwayapp.com']
-ALLOWED_HOSTS = ["*", "127.0.0.1", "*.railwayapp.com"]
+ALLOWED_HOSTS = ["*", "127.0.0.1", "https://*.railwayapp.com"]
 
 
 # Application definition
@@ -39,9 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    '**corsheaders.middleware.CorsMiddleware**',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
